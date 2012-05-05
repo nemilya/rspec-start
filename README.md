@@ -271,11 +271,11 @@ Rspec - это библиотека, которая позволяет тест�
 
 Для настройки создаём в корне приложения файл `.autotest` с содержимым:
 
-  Autotest.add_hook(:initialize) {|at|
-    at.add_exception %r{^\.git}  # ignore Version Control System
-    at.add_exception %r{^./README.md}
-    nil
-  }
+    Autotest.add_hook(:initialize) {|at|
+      at.add_exception %r{^\.git}  # ignore Version Control System
+      at.add_exception %r{^./README.md}
+      nil
+    }
 
 Методом `add_exception` добавили игнорирование папки `.git` и файла `README.md`.
 
