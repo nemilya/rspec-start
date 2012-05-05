@@ -8,4 +8,11 @@ class Ball
       @y = options[:y]
     end
   end
+
+  def move_to(direction)
+    case direction
+      when :right then @x += 1
+    end
+  end
+
 end

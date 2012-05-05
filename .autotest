@@ -1,0 +1,6 @@
+# ./.autotest
+Autotest.add_hook(:initialize) {|at|
+  at.add_exception %r{^\.git}  # ignore Version Control System
+  at.add_exception %r{^./README.md}  # ignore temp files, lest autotest will run again, and again...
+  nil
+}

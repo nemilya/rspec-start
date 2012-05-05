@@ -13,4 +13,15 @@ describe Ball do
     ball.y.should == 2
   end
 
+
+  context "#move_to" do
+    it "при движении направо увеличивается координата x, но y остётся неизменной" do
+      ball = Ball.new :x=>1, :y=>2
+      ball.move_to :right
+
+      ball.x.should == 2
+      ball.y.should == 2
+    end
+  end
+
 end

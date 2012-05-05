@@ -4,6 +4,18 @@
 # loaded once.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+# win console utf8
+if RUBY_PLATFORM =~ /mswin32/ || RUBY_PLATFORM =~ /mingw32/
+  class IO
+    def puts(text=nil)
+      require 'iconv'
+      text2 = Iconv.iconv('CP866', 'UTF-8', text)
+      Kernel::puts text2
+    end
+  end
+end
+
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
